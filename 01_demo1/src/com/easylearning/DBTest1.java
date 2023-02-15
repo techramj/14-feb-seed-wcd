@@ -12,7 +12,11 @@ public class DBTest1 {
 		System.out.println("Driver loaded");
 		Connection con = null;
 		try {
+			//loading the driver
 			Class.forName(driverName);
+			System.out.println("Driver loaded successfully!!!");
+			
+			
 			String username ="hr";
 			String password = "hr";
 			String url ="jdbc:oracle:thin:@localhost:1521/ORCLPDB";

@@ -13,6 +13,14 @@ Type-4 pure java driver
 
 
 
+Connection Object
+1. load the driver
+    driverName: 
+    
+2.
+
+alter user hr identified by hr account unlock;
+
 
   
 
