@@ -7,8 +7,11 @@ import java.sql.SQLException;
 public class Test {
 
 	public static void main(String[] args) {
-		Connection con1 = getConnection();
-		Connection con2= getConnection();
+		Connection con1 = ConnectionUtil.getConnection();
+		Connection con2= ConnectionUtil.getConnection();
+		Connection con3 = ConnectionUtil.getConnection();
+		Connection con4= ConnectionUtil.getConnection();
+		System.out.println(con1 == con2);
 	}
 
 	public static Connection getConnection() {
@@ -19,6 +22,8 @@ public class Test {
 		String username = "hr";
 		String password = "hr";
 		//step 1: Load the driver
+		//class.forname throw ClassNotFoundExp. aur yeh checked hota hai and check exp ko
+		//handle karna compulsory hai
 		try {
 			Class.forName(driverName);
 			System.out.println("Driver loaded!!!!");

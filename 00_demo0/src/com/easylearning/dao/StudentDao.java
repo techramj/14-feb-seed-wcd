@@ -2,14 +2,15 @@ package com.easylearning.dao;
 
 import java.sql.Connection;
 
+import com.easylearning.ConnectionUtil;
 import com.easylearning.Test;
 
 public class StudentDao {
 	
-	private Connection connection = Test.getConnection();
+	private Connection connection = ConnectionUtil.getConnection();
 	
 	public void addStuendent(int rollno, String name, String gender) {
-		//
+		System.out.println();
 	}
 	
 	public void updateStudent(int rollno, String newName, String newGender) {

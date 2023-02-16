@@ -1,0 +1,51 @@
+  https://www.oracle.com/in/database/technologies/xe-downloads.html 21c
+  https://www.oicbasics.com/2020/01/download-oracle-database-11g-xe-express.html 11g
+  
+  jdbc:oracle:thin:@localhost:1521/ORCLPDB => 12c onward
+  jdbc:oracle:thin:@localhost:1521:xe" =>11g and before
+  
+  
+JDBC Driver
+Type-1. JDBC-ODBC bridge driver
+Type-2  Native driver
+Type-3 N/w protocol driver /JDBC net pure driver
+Type-4 pure java driver
+
+
+
+Connection Object
+1. load the driver
+    driverName: 
+    
+2.
+
+alter user hr identified by hr account unlock;
+
+
+_____________________________________________________________________________
+
+Connection object.
+
+Inteface:
+------------
+Statement
+PreparedStatement
+CallableStatement
+
+
+method:
+   execute() :  for all type of query (dml/ddl/dcl)
+   executeQuery() : select
+   executeUpdate(): insert/update/delete
+   
+
+
+
+  
+
+
+
+
+
+
+
