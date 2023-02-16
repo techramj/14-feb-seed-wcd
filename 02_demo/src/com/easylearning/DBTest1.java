@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.easylearning.dao.StudentDao;
 import com.easylearning.model.Student;
 import com.easylearning.model.User;
 import com.easylearning.util.ConnectionUtil;
@@ -117,8 +120,66 @@ public class DBTest1 {
 		}
 	}
 	
+	
+	public static void addStudents(List<Student> students) {
+
+		for(Student student:students) {
+			String sql = "insert into student(rollno, name, gender) values (" + student.getRollno() + ",'" 
+		           + student.getName() + "','" + student.getGender()+ "')";
+			System.out.println(sql);
+			try(Statement st = connection.createStatement()) {
+				int rowCount = st.executeUpdate(sql);
+				System.out.println(rowCount + " row inserted.");
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static void addStudents1(List<Student> students) {
+		String sql = "insert into student(rollno, name, gender) values ( ?,?,?)";
+		try(PreparedStatement ps = connection.prepareStatement(sql)) {
+			for(Student student: students) {
+				ps.setInt(1, student.getRollno());
+				ps.setString(2, student.getName());
+				ps.setString(3, student.getGender()+"");
+				int rowCount = ps.executeUpdate();
+				System.out.println(rowCount + " row inserted.");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
 
 	public static void main(String[] args) {
+		List<Student> students = getStudents();
+		//addStudents(students);
+		StudentDao studentDao = new StudentDao();
+		int count = studentDao.updateStudent(1010, "Iron Man");
+		System.out.println(count+" row updated!!");
+		
+		studentDao.displayStudents();
+		
+	}
+	
+	public static List<Student> getStudents(){
+		List<Student> studentList = new ArrayList<>();
+		Student student1 = new Student(1010, "tony", 'M');
+		Student student2 = new Student(1012, "john", 'M');
+		Student student3 = new Student(1013, "sam", 'M');
+		Student student4 = new Student(1014, "CLARK", 'M');
+		
+		studentList.add(student1);
+		studentList.add(student2);
+		studentList.add(student3);
+		studentList.add(student4);
+		
+		return studentList;
+	}
+	
+	public static void sampleTest() {
 		//addStudent();
 		/*
 		addStudent(1005, "Ankit", "M");
@@ -133,7 +194,7 @@ public class DBTest1 {
 		//addUser("sachinm", "sachin", "Mukade","sachimm@test.com", "1234");
 		//addUser("rohits", "rohit", "sharma","rohits@test.com", "abcd");
 		
-		User user1 = new User();
+		/*User user1 = new User();
 		user1.setUsername("viratk");
 		user1.setFirstName("virat");
 		user1.setLastName("kohli");
@@ -142,6 +203,7 @@ public class DBTest1 {
 		
 		addUser(user1);
 		
+		*/		
 	}
 
 }
