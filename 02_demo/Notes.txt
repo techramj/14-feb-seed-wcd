@@ -26,7 +26,7 @@ _____________________________________________________________________________
 
 Connection object.
 
-Inteface:
+Interface:
 ------------
 Statement
 PreparedStatement
@@ -37,8 +37,49 @@ method:
    execute() :  for all type of query (dml/ddl/dcl)
    executeQuery() : select
    executeUpdate(): insert/update/delete
+
+
+
+
+Java 7:
+   multicatch
+   try with resource
+   diamond feature List<Integer> list = new ArrayList<>();
+   string in switch case
+   
+   switch(long){
+   	case 1;
+   }
+   
+   
+   int a = 10;
+   int b = 10;
+   switch (a) {
+	case b:
+   }
+   
+   
+   
    
 
+ 
+Emp
+ id : sequence => emp_seq
+ name
+ salary
+ 
+ 
+ public Employee  addEmployee(Employee emp){
+  //logic
+ 
+ }
+ 
+ main(){
+   Employee emp1 = new Employee("Jack", 5000);
+   Employee addedEmp = dao.addEmployee(emp1);
+  //addedEmp  id:1, name:jack, salary:5000
+ }
+ 
 
 
   

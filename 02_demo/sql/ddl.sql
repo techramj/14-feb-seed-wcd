@@ -15,3 +15,12 @@ password varchar2(50),
 password_expiry_date date,
 created_date date default sysdate
 );
+
+create table emp(
+id number primary key,
+name varchar2(20),
+salary number
+);
+
+create sequence emp_seq1
+start with 100;

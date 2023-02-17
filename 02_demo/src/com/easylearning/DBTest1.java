@@ -19,6 +19,7 @@ public class DBTest1 {
 
 	public static void addStudent() {
 		String sql ="insert into student(rollno, name, gender) values (1004,'Maria','F')";
+		System.out.println(sql);
 		Statement st = null;
 		try {
 			st = connection.createStatement();
@@ -39,6 +40,7 @@ public class DBTest1 {
 	}
 	
 	public static void addStudent(int rollno, String name, String gender) {
+		Connection connection = ConnectionUtil.getConnection();
 		String sql = "insert into student(rollno, name, gender) values (" + rollno + ",'" + name + "','" + gender
 				+ "')";
 		Statement st = null;
@@ -151,16 +153,17 @@ public class DBTest1 {
 		}
 	}
 
-	
 
 	public static void main(String[] args) {
-		List<Student> students = getStudents();
-		//addStudents(students);
-		StudentDao studentDao = new StudentDao();
-		int count = studentDao.updateStudent(1010, "Iron Man");
-		System.out.println(count+" row updated!!");
+		/*
+		 * List<Student> students = getStudents(); //addStudents(students); StudentDao
+		 * studentDao = new StudentDao(); int count = studentDao.updateStudent(1010,
+		 * "Iron Man"); System.out.println(count+" row updated!!");
+		 * 
+		 * studentDao.displayStudents();
+		 */
 		
-		studentDao.displayStudents();
+		addStudent();
 		
 	}
 	
