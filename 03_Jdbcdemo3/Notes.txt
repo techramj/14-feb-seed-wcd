@@ -1,0 +1,114 @@
+  https://www.oracle.com/in/database/technologies/xe-downloads.html 21c
+  https://www.oicbasics.com/2020/01/download-oracle-database-11g-xe-express.html 11g
+  
+  jdbc:oracle:thin:@localhost:1521/ORCLPDB => 12c onward
+  jdbc:oracle:thin:@localhost:1521:xe" =>11g and before
+  
+  
+JDBC Driver
+Type-1. JDBC-ODBC bridge driver
+Type-2  Native driver
+Type-3 N/w protocol driver /JDBC net pure driver
+Type-4 pure java driver
+
+
+
+Connection Object
+1. load the driver
+    driverName: 
+    
+2.get the connection object using DriverManager
+
+alter user hr identified by hr account unlock;
+
+
+_____________________________________________________________________________
+
+Connection object.
+
+Interface:
+------------
+Statement
+
+PreparedStatement
+
+
+CallableStatement
+
+
+method:
+   execute():boolean  =>  for all type of query (dml/ddl/dcl)
+     insert => false
+     update => false
+     delete => false
+     select  => true
+     alter =>  false
+     
+   executeQuery():ResultSet  => select
+   executeUpdate():int => insert/update/delete
+
+
+
+
+Java 7:
+   multicatch
+   try with resource
+   diamond feature List<Integer> list = new ArrayList<>();
+   string in switch case
+   
+   switch(long){
+   	case 1;
+   }
+   
+   
+   int a = 10;
+   int b = 10;
+   switch (a) {
+	case b:
+   }
+   
+   
+   
+   
+
+ 
+Emp
+ id : sequence => emp_seq
+ name
+ salary
+ 
+ 
+ public Employee  addEmployee(Employee emp){
+  //logic
+ 
+ }
+ 
+ main(){
+   Employee emp1 = new Employee("Jack", 5000);
+   Employee addedEmp = dao.addEmployee(emp1);
+  //addedEmp  id:1, name:jack, salary:5000
+ }
+ 
+
+
+
+ResultSet rs;
+
+//how many cols, what are the type, name of columns
+
+
+
+ //add 100 rows
+ 
+ List<Employee> list; //100 employees
+ 
+ for(Employee emp:list){
+ 	ps.setInt
+ }
+
+
+
+
+
+
+

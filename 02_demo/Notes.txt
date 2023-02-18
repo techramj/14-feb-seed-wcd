@@ -17,7 +17,7 @@ Connection Object
 1. load the driver
     driverName: 
     
-2.
+2.get the connection object using DriverManager
 
 alter user hr identified by hr account unlock;
 
@@ -29,7 +29,10 @@ Connection object.
 Interface:
 ------------
 Statement
+
 PreparedStatement
+
+
 CallableStatement
 
 

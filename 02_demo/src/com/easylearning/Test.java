@@ -21,6 +21,9 @@ public class Test {
 		UserDao userDao = new UserDao();
 		int count = userDao.deleteUserByUserName("viratk");
 		System.out.println(count+" row deleted!!!!!");
+		
+		
+		
 	}
 	
 }
