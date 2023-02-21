@@ -105,6 +105,40 @@ ResultSet rs;
  for(Employee emp:list){
  	ps.setInt
  }
+ 
+ 
+ 
+ 
+ Assignment:
+1. Add 10000 record using batch update with PreparedStatement
+ batch size = 500;
+ 
+ 1  Jack-00001 1000
+ 2  Jack-00002 1001
+ 3  Jack-00003 1002
+ .
+ .
+ 10000 Jack-10000 11000
+ 
+ 
+2. query to update the salary by 1000 to the employee whose name end with 5
+ 
+3. delete the employees who name end with 3
+
+4. display the employees whose salary is multiple of 1000
+ 
+
+Tomorrow
+---------
+how to create the connection object using properties file
+Transaction
+ResultSet
+
+ 
+ 
+ 
+ 
+ 
 
 
 
