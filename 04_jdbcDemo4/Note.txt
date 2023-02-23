@@ -1,0 +1,81 @@
+100  1000->   107
+UPDATE FOR ID 100
+UPDATE FOR ID 107
+INSERT LOG
+COMMIT/ROLLBACK;
+
+Atomicity
+Consistency
+Isolation
+Durability
+
+
+
+
+Statement
+
+
+PreparedStament
+
+
+CallableStatement
+
+
+JDBC 2:
+ResultSet.
+
+Statement st = connection.createStatement();
+ResultSet rs = st.executeQuery(sql);
+
+rs will move only in forward direction.
+rs is readonly in nature.
+
+======================================
+Statement st = connection.createStatement(int resultType, int resultConcurrency);
+ResultSet rs = st.executeQuery(sql);
+
+PreparedStatement ps = con.prepareCall(sql,int resultType, int resultConcurrency);
+
+resutlType:
+TYPE_FORWARD_ONLY: 
+TYPE_SCROLL_INSESITIVE
+
+resultConcurrency:
+CONCUR_READ_ONLY
+CONCUR_UPDATEABLE
+
+
+
+
+
+
+
+
+
+
+
+Employee
+10 emp
+
+1. Display
+
+2. update
+    which row you want to update?
+    enter new name:
+    enter new salary:
+    
+3. delete
+   which row you want to delete?5
+   
+4. add
+   enter name:
+   enter salary:
+   
+  
+Enter the choice?
+
+
+
+
+
+

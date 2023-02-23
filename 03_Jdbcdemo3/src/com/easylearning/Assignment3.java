@@ -18,27 +18,7 @@ public class Assignment3 {
 		ob.addEmployee(empList);
 	}
 	
-	public void addEmployee() {
-		String sql ="insert into emp(id,name,salary) values (seq_emp, 'Jack-'||LPAD(?,5,'0'), 1000+?)";
-		Connection conn = ConnectionUtil.getConnection();
-		int count =0;
-		
-		long t1 = System.currentTimeMillis();
-		try(PreparedStatement ps = conn.prepareStatement(sql)){
-			for(int i=1;i<=10000;i++) {
-				++count;
-				ps.setInt(1, i);
-				ps.setInt(2, i-1);
-				
-			}
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
-		long t2 = System.currentTimeMillis();
-		
-		System.out.println("Time taken to insert 10000 rows: "+(t2-t1)+" ms");
-		
-	}
+
 	
 	public void addEmployee(List<Employee> employees) {
 		String sql ="insert into emp(id,name,salary) values (?,?,?)";

@@ -122,11 +122,13 @@ ResultSet rs;
  
  
 2. query to update the salary by 1000 to the employee whose name end with 5
+update emp set salary = salary + ? where last_name like '%5';
  
 3. delete the employees who name end with 3
+delete emp where last_name like '%3';
 
 4. display the employees whose salary is multiple of 1000
- 
+ select * from emp where mod(salary,1000) =  0;
 
 Tomorrow
 ---------
@@ -134,6 +136,15 @@ how to create the connection object using properties file
 Transaction
 ResultSet
 
+ 
+ class Employee{
+    int id;
+    String name;
+    double salary;
+ 	List<Project>  projects;
+ }
+ 
+ 
  
  
  
