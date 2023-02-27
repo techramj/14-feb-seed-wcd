@@ -8,8 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.easylearning.model.User;
+import com.easylearning.service.LoginService;
+
 public class LoginServlet extends HttpServlet {
 	
+	private LoginService loginService = new LoginService();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -17,6 +21,7 @@ public class LoginServlet extends HttpServlet {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		System.out.println("username: "+username+"   password: "+password);
+		User user = loginService.getUser(username, password);
 		
 		PrintWriter out = resp.getWriter();
 		out.println("<html>");
@@ -25,8 +30,13 @@ public class LoginServlet extends HttpServlet {
 		out.println("</header>");
 		out.println("<body>");
 		
-		
-		out.println("<h1> Welcome  "+username+"</h1>");
+	
+		if(user!= null) {
+			out.println("<h1> Welcome  "+username+"</h1>");
+		}else {
+			out.println("<p>Invalid username or password</p>");
+			out.println("<a href='login.html'>click here</a> for Login.");
+		}
 		out.println("</body>");
 		out.println("</html>");
 	}
