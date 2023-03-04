@@ -2,7 +2,9 @@ package com.easylearning.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,9 +22,18 @@ import com.easylearning.service.LoginService;
 public class LoginServlet extends HttpServlet {
 	
 	private LoginService loginService = new LoginService();
+	int a = 10;
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public void init() throws ServletException {
+		ServletConfig config = getServletConfig();
+		ServletContext context = getServletContext();
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+		int b = 20;
 		//System.out.println("LoginServlet get method called!!!!!!");
 				String username = req.getParameter("username");
 				String password = req.getParameter("password");
@@ -35,13 +46,15 @@ public class LoginServlet extends HttpServlet {
 				out.println("<title>Home Page</title>");
 				out.println("</header>");
 				out.println("<body>");
-				
 			
 				if(user!= null) {
+					
+					//session tracking
 					HttpSession session = req.getSession();   //req.getSession(false)
 					
 					session.setAttribute("firstName", user.getFirstName());
 					session.setAttribute("email",user.getEmail());
+					
 					ServletContext context = getServletContext();
 					
 					
@@ -58,6 +71,7 @@ public class LoginServlet extends HttpServlet {
 					out.println("<button type=\"submit\">Display Friend's Name</button>");
 					out.println("</form>");
 					out.println("<hr>");
+					out.println("<h5>"+new Date()+"</h5>");
 				}else {
 					out.println("<p>Invalid username or password</p>");
 					out.println("<a href='login.html'>click here</a> for Login.");
@@ -65,5 +79,6 @@ public class LoginServlet extends HttpServlet {
 				out.println("</body>");
 				out.println("</html>");
 	}
+
 
 }
