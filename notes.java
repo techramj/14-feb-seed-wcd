@@ -1,3 +1,5 @@
+import javafx.scene.control.IndexedCellBuilder;
+
 .jsp  ->  .Java (Translation)
 .java -> .class (compilation)
 load the .class
@@ -68,11 +70,32 @@ exception   Throwable
 
 
 el attribute
-param
-paramvalues
-request
+pageScope			   it maps the given attribute name with the value set in the page scope
+requestScope		it maps the given attribute name with the value set in the request scope
+sessionScope		it maps the given attribute name with the value set in the session scope
+applicationScope	it maps the given attribute name with the value set in the application scope
+param				it maps the request parameter to the single value
+
+
+paramValues			it maps the request parameter to an array of values
+header				it maps the request header name to the single value
+headerValues		it maps the request header name to an array of values
+cookie				it maps the given cookie name to the cookie value
+initParam			it maps the initialization parameter
+pageContext			it provides access to many objects request, session etc.
+
+
 
 
 jsp action tag
+-------------
+jsp:useBean
+jsp:setProperty
+jsp:getProperty 
+jsp:Include 
+jsp:forward 
 
 
+
+mvc pattern
+---------------
